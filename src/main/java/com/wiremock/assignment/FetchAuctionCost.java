@@ -1,36 +1,31 @@
 package com.wiremock.assignment;
-import java.util.ArrayList;
+import java.text.DecimalFormat;
 import java.util.List;
-
 import org.junit.Test;
-import org.json.JSONObject;
-
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
+import com.models.IPLPlayers;
+import com.models.Players;
 import com.services.stub.SetupStub;
 
 
 
-
 public class FetchAuctionCost extends SetupStub{
-
 	
 	@Test
-	public void readJson() {
+	public void getYOYIncrease() {
 		
-		RestAssured.baseURI = "http://localhost:8080";
 		
-		Response response = RestAssured.given()
-				.log().all()
-				.when()
-				.get("/v1/IPL/players");
+		DecimalFormat df = new DecimalFormat("0.00");
+		
+		GetPlayersData gpd = new GetPlayersData();
+		
+		Response response = gpd.getPlayers();
 		
 		int statusCode = response.getStatusCode();
 		System.out.println(statusCode);
-		
-		System.out.println("This is inside fetch auction");
 		
 		JsonPath jsonPathEvaluator = response.jsonPath();
 		
@@ -40,40 +35,31 @@ public class FetchAuctionCost extends SetupStub{
 		
 		int difference = 0;
 		int totalCostTillPreviousYear = 0;
+		double yoy = 0.0; 
 		for(IPLPlayers iter : playersList)
 		 {
-			System.out.println("Players: " + iter.year);
+			//System.out.println("Players: " + iter.year);
 			int totalCostByYear = 0;
 		
 			for(Players iter2 : iter.players) {
-				System.out.println(iter2.auction_cost);
+			//	System.out.println(iter2.auction_cost);
 				totalCostByYear = totalCostByYear + iter2.auction_cost;
 				
 				
 			}
 			totalCost = totalCost + totalCostByYear;
 			
-			
 			difference = totalCostByYear - totalCostTillPreviousYear;
 			
 			totalCostTillPreviousYear = totalCostByYear; 
-			System.out.println("This is the total Cost til now " + totalCost);
-			System.out.println("This is the total cost by year " + totalCostByYear);
-			System.out.println("This is the difference = " + difference);
 			
+			yoy = (double)difference / totalCostTillPreviousYear * 100;
 			
-		 }
-		
-	/*	for(String players : playersList)
-		 {
-			System.out.println("Players: " + players);
-		 }
-		
-		*/
 
-		
+		 }
+		System.out.println("This is the total Cost till now = " + totalCost);
+		//System.out.println("This is the total cost by year = " + totalCostByYear);
+		System.out.println("The year on year increase in the player price is " + difference);
+		System.out.println("The year on year increase in the player price is " + df.format(yoy) + "%");
 	}
-	
-	
-
 }

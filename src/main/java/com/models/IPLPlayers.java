@@ -1,6 +1,4 @@
-package com.wiremock.assignment;
-
-import com.wiremock.assignment.Players;
+package com.models;
 
 import java.util.List;
 

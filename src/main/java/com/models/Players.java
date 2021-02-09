@@ -1,4 +1,4 @@
-package com.wiremock.assignment;
+package com.models;
 
 public class Players {
 	
