@@ -4,7 +4,7 @@ import com.util.*;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-public class GetPlayersData {
+public class GetPlayersService {
 	
 	public  Response getPlayers() {
 		RestAssured.baseURI = Constants.baseURI;

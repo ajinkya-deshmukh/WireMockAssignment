@@ -11,16 +11,15 @@ import com.models.Players;
 import com.services.stub.SetupStub;
 
 
-
-public class FetchAuctionCost extends SetupStub{
+public class CalculateIncrease extends SetupStub{
 	
 	@Test
-	public void getYOYIncrease() {
+	public void getYearOnYearIncrease() {
 		
 		
 		DecimalFormat df = new DecimalFormat("0.00");
 		
-		GetPlayersData gpd = new GetPlayersData();
+		GetPlayersService gpd = new GetPlayersService();
 		
 		Response response = gpd.getPlayers();
 		
