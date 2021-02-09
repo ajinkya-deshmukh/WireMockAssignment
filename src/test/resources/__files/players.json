@@ -1,0 +1,81 @@
+{
+    "ipl" : [
+        {
+            "year" : 2018,
+            "players" : [ 
+                {
+                    "team" : "Delhi",
+                    "name": "Ajinkya Rahane",
+                    "auction_cost" : 15000
+                },
+                {
+                    "team" : "Bangalore",
+                    "name": "Virat Kohli",
+                    "auction_cost" : 20000
+                },
+                {
+                    "team" : "Chennai",
+                    "name": "MS Dhoni",
+                    "auction_cost" : 25000
+                },
+                {
+                    "team" : "Mumbai",
+                    "name": "Hardik Pandya",
+                    "auction_cost" : 30000
+                }
+            ]
+        },
+        {
+            "year" : 2019,
+            "players" : [ 
+                {
+                    "team" : "Delhi",
+                    "name": "Ajinkya Rahane",
+                    "auction_cost" : 20000
+                },
+                {
+                    "team" : "Bangalore",
+                    "name": "Virat Kohli",
+                    "auction_cost" : 25000
+                },
+                {
+                    "team" : "Chennai",
+                    "name": "MS Dhoni",
+                    "auction_cost" : 30000
+                },
+                {
+                    "team" : "Mumbai",
+                    "name": "Hardik Pandya",
+                    "auction_cost" : 35000
+                }
+            ]
+        },
+        {
+            "year" : 2020,
+            "players" : [ 
+                {
+                    "team" : "Delhi",
+                    "name": "Ajinkya Rahane",
+                    "auction_cost" : 25000
+                },
+                {
+                    "team" : "Bangalore",
+                    "name": "Virat Kohli",
+                    "auction_cost" : 30000
+                },
+                {
+                    "team" : "Chennai",
+                    "name": "MS Dhoni",
+                    "auction_cost" : 35000
+                },
+                {
+                    "team" : "Mumbai",
+                    "name": "Hardik Pandya",
+                    "auction_cost" : 40000
+                }
+            ]
+        }
+    ]
+}
+
+
