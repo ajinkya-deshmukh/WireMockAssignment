@@ -40,11 +40,8 @@ public class CalculateIncrease extends SetupStub{
 			//System.out.println("Players: " + iter.year);
 			int totalCostByYear = 0;
 		
-			for(Players iter2 : iter.players) {
-			//	System.out.println(iter2.auction_cost);
-				totalCostByYear = totalCostByYear + iter2.auction_cost;
-				
-				
+			for(Players iter2 : iter.getPlayers()) {
+				totalCostByYear = totalCostByYear + iter2.getAuction_cost();
 			}
 			totalCost = totalCost + totalCostByYear;
 			
@@ -53,11 +50,8 @@ public class CalculateIncrease extends SetupStub{
 			totalCostTillPreviousYear = totalCostByYear; 
 			
 			yoy = (double)difference / totalCostTillPreviousYear * 100;
-			
-
 		 }
 		System.out.println("This is the total Cost till now = " + totalCost);
-		//System.out.println("This is the total cost by year = " + totalCostByYear);
 		System.out.println("The year on year increase in the player price is " + difference);
 		System.out.println("The year on year increase in the player price is " + df.format(yoy) + "%");
 	}
