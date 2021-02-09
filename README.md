@@ -1,11 +1,11 @@
-# Chinmaya Hospitals Assignment
+# WireMock IPL Players Assignment
 
-Assignment project to understand on a given day or for a range of days, how many OP's are within Bangalore and how many are from outside.
+Assignment project to understand working of wiremock to setup stubs and to calculate the YOY increase in IPL players price.
 
 
 ### Running the tests
 
-Run the RunPatientSystem.java file and enter input into the console when prompted.
+Run 'mvn install' and then run the project.
 
 
 ### Built With
@@ -15,4 +15,4 @@ Run the RunPatientSystem.java file and enter input into the console when prompte
 
 ### Authors
 
-* **Ajinkya Deshmukh** - (https://github.com/ajinkya-deshmukh/ChinmayaHospitalsAssignment.git)
+* **Ajinkya Deshmukh** - (https://github.com/ajinkya-deshmukh/WireMockAssignment.git)
