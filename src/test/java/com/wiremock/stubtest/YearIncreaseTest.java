@@ -1,9 +1,5 @@
 package com.wiremock.stubtest;
 
-import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
-import static com.github.tomakehurst.wiremock.client.WireMock.get;
-import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
-import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
@@ -12,6 +8,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.slf4j.LoggerFactory;
 
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import com.models.IPLPlayers;
@@ -22,6 +19,8 @@ import io.restassured.response.Response;
 import com.services.stub.SetupStub;
 
 public class YearIncreaseTest {
+	
+	private static org.slf4j.Logger logger = LoggerFactory.getLogger(CalculateIncrease.class);
 
 	@Rule
 	public WireMockRule wireMockRule = new WireMockRule();
@@ -30,7 +29,7 @@ public class YearIncreaseTest {
 	public void setup() {
 		wireMockRule.start();
 		SetupStub.getStub();
-		System.out.println("Inside The Before Class");
+		logger.info("Inside The Before Class");
 	}
 	
 	@Test
