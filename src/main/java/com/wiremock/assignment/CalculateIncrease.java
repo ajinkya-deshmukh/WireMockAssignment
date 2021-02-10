@@ -19,23 +19,9 @@ public class CalculateIncrease extends SetupStub{
 	
 	private static org.slf4j.Logger logger = LoggerFactory.getLogger(CalculateIncrease.class);
 	
-	@Test
-	public void getYearOnYearIncrease() {
-		
+	public static void calculateIncrease(List<IPLPlayers> playersList) {
 		
 		DecimalFormat df = new DecimalFormat("0.00");
-		
-		GetPlayersService gpd = new GetPlayersService();
-		
-		Response response = gpd.getPlayers();
-		
-		int statusCode = response.getStatusCode();
-		System.out.println(statusCode);
-		
-		JsonPath jsonPathEvaluator = response.jsonPath();
-		
-		List<IPLPlayers> playersList = jsonPathEvaluator.getList("ipl", IPLPlayers.class);
-		
 		int totalCost = 0;
 		
 		int difference = 0;
@@ -60,6 +46,6 @@ public class CalculateIncrease extends SetupStub{
 		logger.info("This is the total Cost till now = " + totalCost);
 		logger.info("The year on year increase in the player price is " + difference);
 		logger.info("The year on year increase in the player price is " + df.format(yoy) + "%");
-	
+		
 	}
 }
