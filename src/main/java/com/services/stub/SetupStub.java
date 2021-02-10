@@ -15,26 +15,10 @@ import io.restassured.response.Response;
 
 public class SetupStub {
 	
-	@Rule
-	public WireMockRule wireMockRule = new WireMockRule();
-
-	
-	public void getStub() {
+	public static void getStub() {
 		stubFor(get(urlEqualTo("/v1/IPL/players")).willReturn(aResponse().withStatus(200)
 				.withBodyFile("players.json")
 				.withHeader("Content-Type", "Application/json")));
-	}
-	
-	@Before
-	public void setup() {
-		wireMockRule.start();
-		getStub();
-		System.out.println("Inside The Before Class");
-	}
-	
-	@After
-	public void tearDown() {
-		wireMockRule.stop();
 	}
 
 }
