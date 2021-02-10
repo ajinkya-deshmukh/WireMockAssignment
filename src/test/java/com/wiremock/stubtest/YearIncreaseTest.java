@@ -4,6 +4,7 @@ import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
 import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
@@ -36,18 +37,15 @@ public class YearIncreaseTest {
 	public void getYearOnYearIncrease() {
 		
 		GetPlayersService gpd = new GetPlayersService();
-		
 		Response response = gpd.getPlayers();
 		
 		int statusCode = response.getStatusCode();
-		System.out.println(statusCode);
+		assertEquals(200, statusCode);
 		
 		JsonPath jsonPathEvaluator = response.jsonPath();
 		
 		List<IPLPlayers> playersList = jsonPathEvaluator.getList("ipl", IPLPlayers.class);
-		
 		CalculateIncrease.calculateIncrease(playersList);
-	
 	}
 	
 	@After
