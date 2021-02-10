@@ -18,6 +18,7 @@ public class SetupStub {
 	@Rule
 	public WireMockRule wireMockRule = new WireMockRule();
 
+	
 	public void getStub() {
 		stubFor(get(urlEqualTo("/v1/IPL/players")).willReturn(aResponse().withStatus(200)
 				.withBodyFile("players.json")
